@@ -8,7 +8,7 @@ int main()
 		printf(">\n");
 	}
 	else if(a==b){
-		printf("=\n");
+		printf("==\n");
 	}
 	else{
 		printf("<\n");
