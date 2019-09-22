@@ -5,13 +5,13 @@ int main()
 	int a,b;
 	scanf("%d %d",&a,&b);
 	if(a>b){
-		printf(">");
+		printf(">\n");
 	}
 	else if(a==b){
-		printf("=");
+		printf("=\n");
 	}
 	else{
-		printf("<");
+		printf("<\n");
 	}
 	return 0;
 }
