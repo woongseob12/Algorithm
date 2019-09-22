@@ -3,9 +3,10 @@
 int main()
 {
 	int a,b;
-	double c;
+	double res;
 	scanf("%d %d",&a,&b);
-	c= (double)a/(double)b;
-	printf("%f",c);
+	res = (double)a/(double)b;
+	printf("%f\n", res);
 	return 0;
 }
+
