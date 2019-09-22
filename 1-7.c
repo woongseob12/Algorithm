@@ -7,5 +7,3 @@ int main()
 	prtinf("%d\n",a-b);
 	return 0;
 }
-
-d
