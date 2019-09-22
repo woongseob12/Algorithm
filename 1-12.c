@@ -10,8 +10,8 @@ int main()
 	third = a*(b-(b%100));
 	forth = first + second + third;
 	printf("%d\n",first);
-	printf("%d\n",second);
-	printf("%d\n",third);
+	printf("%d\n",second/10);
+	printf("%d\n",third/100);
 	printf("%d\n",forth);
 	return 0;
 }
