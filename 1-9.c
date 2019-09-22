@@ -6,7 +6,6 @@ int main()
 	double res;
 	scanf("%d %d",&a,&b);
 	res = (double)a/(double)b;
-	printf("%f\n", res);
+	printf("%.9f\n", res);
 	return 0;
 }
-
