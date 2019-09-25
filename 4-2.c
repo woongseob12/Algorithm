@@ -3,11 +3,7 @@
 int main()
 {
 	int a,b;
-	while(1){
-		scanf("%d %d",&a,&b);
-		if((a==!EOF)||(b==!EOF)){
-			break;
-		}
+	while(scanf("%d %d",&a,&b)!=EOF){
 		printf("%d\n",a+b);
 	}
 	return 0;
