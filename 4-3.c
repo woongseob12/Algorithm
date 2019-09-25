@@ -2,20 +2,20 @@
 
 int main()
 {
-	int origin,new;
+	int origin,newValue;
 	int a,b,c;
 	int count = 1;
 	scanf("%d",&origin);
-	new = origin;
+	newValue = origin;
 	while(1){
-	a = new / 10;
-	b = new  % 10;
+	a = newValue / 10;
+	b = newValue  % 10;
 	c = a + b;
 	if(c>= 10){
 		c -= 10;
 	}
-	new = 10*b + c;
-	if(new == origin){
+	newValue = 10*b + c;
+	if(newValue == origin){
 		break;
 	}
 	count++;
