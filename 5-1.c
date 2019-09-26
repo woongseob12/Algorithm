@@ -3,26 +3,22 @@
 
 int main()
 {
-	int *num;
+	int num[1000000];
+	int min = 1000001;
+	int max = -1000001;
 	int size;
-	int i,j,temp;
+	int i;
 	scanf("%d",&size);
-	num = (int*)malloc(sizeof(int)*size);
 	for (i = 0;i<size;i++){
 		scanf("%d",&num[i]);
-	}
-	for(i=0;i<size;i++){
-		for(j=i+1;j<size;j++)
-		{
-			if(num[i]>num[j]){
-				temp = num[i];
-				num[i] = num[j];
-				num[j] = temp;
-			}
+		if(num[i]<min){
+			min = num[i];
+		}
+		if(num[i]>max){
+			max = num[i];
 		}
 	}
-	printf("%d %d\n",num[0],num[size-1]);
-	free(num);
+	printf("%d %d\n",min,max);
 	return 0;
 }
 
