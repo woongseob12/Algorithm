@@ -10,7 +10,7 @@ int main()
 	}
 	if(music[0] == 1){
 		i = 0;
-		while((music[i]==i+1)&&(i<8)){
+		while((i<8)&&(music[i]==i+1)){ //while 조건문 순서 조심 music[i]조건이 늦게 나올경우 미예약영역 읽어들임
 		i++;
 		}
 		if (i== 8){
@@ -19,7 +19,7 @@ int main()
 	}
 	else if(music[0] == 8){
 		i = 0;
-		while((music[i] == 8 -i)&&(i<8)){
+		while((i<8)&&(music[i] == 8 -i)){
 			i++;
 		}
 		if (i==8){
