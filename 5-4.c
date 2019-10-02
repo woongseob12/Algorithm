@@ -18,6 +18,7 @@ int main()
 	else {
 		k = res /100000000;
 		num[k]++;
+		num[0] = -1;
 	}	
 	for(i = 10;i <= 1000000000; i*=10){
 		cal = res % i;
