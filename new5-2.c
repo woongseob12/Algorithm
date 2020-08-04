@@ -13,7 +13,7 @@ int main()
 	for(int i=0; i<sizeof(beverage)/sizeof(beverage[0]);i++){
 		cin>>beverage[i];
 	}
-	for(int i=0; i<sizeof(burfer)/sizeof(burger[0]); i++){
+	for(int i=0; i<sizeof(burger)/sizeof(burger[0]); i++){
 		if(i=0){
 			burgerMin = burger[i];
 		}
@@ -23,7 +23,7 @@ int main()
 			}
 		}
 	}
-	for(int i=0; i<sizeof(berverage)/sizeof(berverage[0]); i++){
+	for(int i=0; i<sizeof(beverage)/sizeof(beverage[0]); i++){
 		if(i=0){
 			beverageMin = beverage[i];
 		}
