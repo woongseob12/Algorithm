@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+int main()
+{
+	string s;
+	cin >> s;
+	int index = 0, size = s.size(), start = 0;
+	vector<int> num;
+	vector<char> op;
+	while (index < size) {
+		if (s.at(index) == '+' || s.at(index) == '-') {
+			num.push_back(stoi(s.substr(start, index - start)));
+			op.push_back(s.at(index));
+			start = index + 1;
+		}
+		index++;
+	}
+	
+	num.push_back(stoi(s.substr(start, index - start)));
+	
+	int minus = num.size(), opSize = op.size();
+	for (int i = 0; i < opSize; i++) {
+		if (op[i] == '-') {
+			minus = i;
+			break;
+		}
+	}
+
+	int numSize = num.size();
+	for (int i = minus + 1; i < numSize; i++) {
+		num[i] *= -1;
+	}
+
+	int sum = 0;
+	for (int i = 0; i < numSize; i++) {
+		sum += num[i];
+	}
+
+	cout << sum << endl;
+}
