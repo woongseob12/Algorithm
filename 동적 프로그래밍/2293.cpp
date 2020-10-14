@@ -15,15 +15,14 @@ int main()
 		cin >> coin[i];
 	}
 	sort(coin.begin(), coin.end());
-
 	dp[0] = 1;
 
 	for (int i = 0; i < n; i++) {
-		for (int j = coin[0]; j <= k; j++ ) {
-			dp[j] += dp[j - coin[i]];
+		for (int j = coin[i]; j <= k; j++) {
+			if (j - coin[i] >= 0) {
+				dp[j] += dp[j - coin[i]];
+			}
 		}
 	}
-	
 	cout << dp[k] << endl;
-
 }
