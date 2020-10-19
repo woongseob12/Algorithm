@@ -9,9 +9,9 @@ int main()
 
 	for (int i = 0; i < 4; i++) {
 		int in, out;
-		cin >> in >> out;
-		people += in;
+		cin >> out >> in;
 		people -= out;
+		people += in;
 		now = max(people, now);
 	}
 
