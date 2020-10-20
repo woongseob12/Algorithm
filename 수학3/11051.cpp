@@ -3,23 +3,22 @@
 #include <iostream>
 using namespace std;
 
-
 int dp[MAX][MAX];
 
 int main()
 {
 	int N, K;
 	cin >> N >> K;
-	for (int i = 0; i < MAX; i++) {
-		dp[i][1] = i;
-		dp[i][i] = dp[i][0] = 1;
-	}
 
-	for (int i = 2; i < MAX; i++) {
-		for (int j = 2; j < MAX; j++) {
-			dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j]) % MOD;
+	for (int i = 0; i <= N; i++) {
+		for (int j = 0; j <= K; j++) {
+            if(i == j || j == 0){
+                dp[i][j] = 1;
+            }
+            else{
+                dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j]) % MOD;
+            }
 		}
 	}
 	cout << dp[N][K] % MOD << endl;
 }
-
