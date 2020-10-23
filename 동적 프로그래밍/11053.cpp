@@ -15,7 +15,7 @@ int main()
 	}
 
 	int sum = 0;
-	for (int i = 1; i <= n; i++) {
+	for (int i = 1; i <= n; i++) { // i번째 수열이 마지막이 되는 수열
 		dp[i] = 1;
 		for (int j = 1; j < i; j++) {
 			if (num[j] < num[i]) {
