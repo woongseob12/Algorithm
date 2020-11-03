@@ -4,26 +4,28 @@
 using namespace std;
 
 string ans = "";
-long long dp[202][101];	// 만들 수 있는 경우의 수
+int dp[101][101];	
 void nextWord(int A, int Z, int next);
 
 int main()
 {
 	int N, M, K;
 	cin >> N >> M >> K;
-	for (int i = 0; i <= 200; i++) {
-		for (int j = 0; j <= i; j++) {
-			if (i == j || j == 0) {
+
+	for (int i = 0; i <= N; i++) {
+		for (int j = 0; j <= M; j++) {
+			if (i == 0 || j == 0) {
 				dp[i][j] = 1;
 			}
 			else {
-				dp[i][j] = min((int)(dp[i - 1][j - 1] + dp[i - 1][j]), 1000000000);
+				dp[i][j] = min(dp[i][j - 1] + dp[i - 1][j], 1000000000);
 			}
 		}
 	}
-	if (K > dp[N + M][M]) { cout << "-1" << endl; }
+
+	if (K > dp[N][M]) { cout << "-1" << endl; }
 	else {
-		nextWord(N - 1, M, K);
+		nextWord(N, M, K);
 		cout << ans << endl;
 	}
 }
@@ -42,10 +44,11 @@ void nextWord(int A, int Z, int next)
 		}
 		return;
 	}
-	int idx = dp[A - 1][Z] + dp[A][Z - 1];
+
+	int idx = dp[A - 1][Z];
 	if (next <= idx) {
 		ans += "a";
-		nextWord(A- 1, Z, next);
+		nextWord(A- 1, Z, next - 1);
 	}
 	else {
 		ans += "z";
