@@ -22,4 +22,4 @@ int main()
 		}
 	}
 	cout << dp[N][K] << endl;
-}
+} 
