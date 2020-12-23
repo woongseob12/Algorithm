@@ -24,22 +24,17 @@ void init()
 
 void dq(int row, int col, int size)
 {
-	if (size == 2) {
-		for (int i = 0; i < 4; i++) {
-			int nR = row + dr[i], nC = col + dc[i];
-			if (nR == r && nC == c) {
-				cout << ans << endl;
-				return;
-			}
-			ans++;
-		}
+	if (row == r && col == c) {
+		cout << ans << '\n';
 		return;
 	}
-	else {
-		// 4분면 나누기
+	if (r < row + size && c < col + size && r >= row && c >= col) {
 		dq(row, col, size / 2);
 		dq(row, col + size / 2, size / 2);
 		dq(row + size / 2, col, size / 2);
 		dq(row + size / 2, col + size / 2, size / 2);
-	}	
+	}
+	else {
+		ans += size * size;
+	}
 }
