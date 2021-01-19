@@ -24,13 +24,14 @@ int main() {
 				cout << op.top();
 				op.pop();
 			}
-			op.pop();
+			if (op.top() == '(') { op.pop(); }
 		}
 		else if (str[i] == '+' || str[i] == '-') {
 			while (!op.empty() && op.top() != '(') {
 				cout << op.top();
 				op.pop();
 			}
+			if (op.top() == '(') { op.pop(); }
 			op.push(str[i]);
 		}
 		else {	// *, /
