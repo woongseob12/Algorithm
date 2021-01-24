@@ -35,7 +35,7 @@ int main()
 			cout << minHeap.top() << '\n';
 		}
 		else {
-			cout << minHeap.top() << '\n';
+			cout << maxHeap.top() << '\n';
 		}
 	}
 }
