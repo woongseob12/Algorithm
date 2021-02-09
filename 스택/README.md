@@ -1,8 +1,7 @@
 # Stack
 
-<p align="center">
-  ![stack](https://user-images.githubusercontent.com/55429912/107362203-cc407f00-6b1b-11eb-948a-70d6d7cba657.png)
-</p>
+![stack](https://user-images.githubusercontent.com/55429912/107362203-cc407f00-6b1b-11eb-948a-70d6d7cba657.png)
+
 
 # 특징
 - LIFO(Last In First Out)
