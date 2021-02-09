@@ -10,18 +10,12 @@
 - lower_bound() => O(NlogN)
   - N번 확인 * lower_bound()를 이용하여 최댓값을 찾음 = O(N * logN)
 
-# 기타 Method
 
+# lower_bound()
 ```C++
-stack.push(1);       
-stack.top();        
-stack.pop();       
-stack.size();       
-stack.empty();       
+ForwardIt lower_bound(Forward first, ForwardIt last, const T&value);
 ```
+- lower_bound(first, last, x) 는 [first, last) 범위에서 **x 이상인 첫번째 원소의 위치**를 반환(iterator)
+- lower_bound(first, last, x) - first 를 통하여 인덱스값을 반환 가능
+  - *ex) lower_bound(v.begin(), v.end(), 0) - v.begin()*
 
-# 적용 가능 문제 
-- <a href = https://www.acmicpc.net/problem/1725 >1725번 히스토그램</a> 
-- <a href = https://www.acmicpc.net/problem/2493 >2493번 탑</a> 
-- <a href = https://www.acmicpc.net/problem/9012 >9012번 괄호</a> 
-- <a href = https://www.acmicpc.net/problem/10799 >10799번 쇠막대기</a> 
