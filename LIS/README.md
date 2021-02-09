@@ -1,8 +1,7 @@
 # LIS(Longest Indreasing Subsequence)
 
-<p align="center">
-  ![stack](https://user-images.githubusercontent.com/55429912/107362203-cc407f00-6b1b-11eb-948a-70d6d7cba657.png)
-</p>
+(https://user-images.githubusercontent.com/55429912/107362203-cc407f00-6b1b-11eb-948a-70d6d7cba657.png)
+
 
 # 최장 증가 부분 수열
 원소가 n개인 배열의 일부 원소를 골라내서 만든 부분 수열 중, 각 **원소가 오름차순으로 정렬**되어 있고, **길이가 최대인 부분 수열**을 **최장 증가 부분 수열**이라고 합니다.
