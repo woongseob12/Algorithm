@@ -1,25 +1,28 @@
 #include <iostream>
-#include <vector>
+#include <stack>
 using namespace std;
 
 int main()
 {
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+
 	int n;
 	cin >> n;
-	vector<int> ans;
+	stack<int> ans;
 	for (int i = 0; i < n; i++) {
 		int temp;
 		cin >> temp;
 		if (!ans.empty() && temp == 0) {
-			ans.pop_back();
+			ans.pop();
 		}
-		else {
-			ans.push_back(temp);
-		}
+		else { ans.push(temp); }
 	}
 	int sum = 0;
-	for (int i = 0; i < (int)ans.size(); i++) {
-		sum += ans[i];
+	while (!ans.empty()) {
+		sum += ans.top();
+		ans.pop();
 	}
-	cout << sum << endl;
+	cout << sum;
 }
