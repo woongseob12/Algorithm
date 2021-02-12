@@ -1,9 +1,9 @@
 # LCA(Lowest Common Ancestor)
 
-![LIS](https://user-images.githubusercontent.com/55429912/107375250-df5b4b00-6b2b-11eb-8f4a-a925b7344162.jpg)
+<img width="797" alt="LCA" src="https://user-images.githubusercontent.com/55429912/107801315-40408880-6da3-11eb-8887-382292d2772b.png">
 
 # 최소 공통 조상
-
+LCA란, 트리상에서 어떤 두 정점 u, v가 있을 때, u이거나 u의 조상이면서 동시에 v이거나 v의 조상인 노드들 중 가장 깊은 노드입니다.
 
 # 알고리즘 
 1. 모든 노드에 대한 깊이(depth)를 계산
