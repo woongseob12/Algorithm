@@ -22,7 +22,7 @@ public class SWEA_3289 {
 				parent[i] = i;
 			}
 
-			for (int i = 0; i < 8; i++) {
+			for (int i = 0; i < m; i++) {
 				st = new StringTokenizer(br.readLine());
 				int op = Integer.parseInt(st.nextToken());
 				int a = Integer.parseInt(st.nextToken());
@@ -50,7 +50,6 @@ public class SWEA_3289 {
 	}
 
 	private static boolean findParent(int a, int b) {
-		// TODO Auto-generated method stub
 		a = getParent(a);
 		b = getParent(b);
 		if(a == b) return true;
@@ -58,7 +57,6 @@ public class SWEA_3289 {
 	}
 
 	private static void unionParent(int a, int b) {
-		// TODO Auto-generated method stub
 		a = getParent(a);
 		b = getParent(b);
 		if (a < b)
