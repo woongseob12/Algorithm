@@ -10,24 +10,25 @@ public class BOJ_20165 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
+		StringBuilder sb = new StringBuilder();
 		int N = Integer.parseInt(st.nextToken());
 		int M = Integer.parseInt(st.nextToken());
 		int R = Integer.parseInt(st.nextToken());
-		int[][] arr = new int[N][M];
-		boolean[][] fall = new boolean[N][M];
-		for (int i = 0; i < N; i++) {
+		int[][] arr = new int[N + 1][M + 1];
+		boolean[][] fall = new boolean[N + 1][M + 1];
+		for (int i = 1; i <= N; i++) {
 			st = new StringTokenizer(br.readLine());
-			for (int j = 0; j < N; j++) {
+			for (int j = 1; j <= M; j++) {
 				arr[i][j] = Integer.parseInt(st.nextToken());
 			}
 		}
-		
+
 		int score = 0;
 		for (int i = 0; i < R; i++) {
 			// 공격수
 			st = new StringTokenizer(br.readLine());
-			int y = Integer.parseInt(st.nextToken()) - 1;
-			int x = Integer.parseInt(st.nextToken()) - 1;
+			int y = Integer.parseInt(st.nextToken());
+			int x = Integer.parseInt(st.nextToken());
 			char dir = st.nextToken().charAt(0);
 			int d = -1;
 			switch (dir) {
@@ -44,66 +45,41 @@ public class BOJ_20165 {
 				d = 3;
 				break;
 			}
-			int ny = y - dy[d];
-			int nx = x - dx[d];
-			int cnt= arr[y][x];
-			if(fall[y][x]) cnt = 0;
-			fall[y][x] = true;
+
+			int cnt = arr[y][x];
 			int loop = 0;
-			while(true) {
-				ny += dy[d];
-				nx += dx[d];
-				if(ny < 0 || nx < 0 || ny >= N || nx >= M) break;
-				cnt--;
-				if(!fall[ny][nx]) {
+			while (cnt > 0) {
+				if (y < 1 || x < 1 || y > N || x > M)
+					break;
+
+				if (!fall[y][x]) {
 					loop++;
-					fall[ny][nx] = true;
-					cnt = Math.max(cnt - 1, arr[ny][nx]);
-				} 
-				if(cnt == 0) break;
-			}
-			
-			System.out.println(i + 1 +"번 라운드");
-			for (int k = 0 ; k < N; k++) {
-				for(int j = 0 ; j <M; j++) {
-					if(fall[k][j]) {
-						System.out.print("F ");
-					} else {
-						System.out.print("S ");
-					}
+					fall[y][x] = true;
+					cnt = Math.max(cnt, arr[y][x]);
 				}
-				System.out.println();
+				y += dy[d];
+				x += dx[d];
+				cnt--;
 			}
 			score += loop;
 			// 수비수
 			st = new StringTokenizer(br.readLine());
-			y = Integer.parseInt(st.nextToken()) - 1;
-			x = Integer.parseInt(st.nextToken()) - 1;
+			y = Integer.parseInt(st.nextToken());
+			x = Integer.parseInt(st.nextToken());
 			fall[y][x] = false;
-			System.out.println(i + 1 +"번 라운드");
-			for (int k = 0 ; k < N; k++) {
-				for(int j = 0 ; j <M; j++) {
-					if(fall[k][j]) {
-						System.out.print("F ");
-					} else {
-						System.out.print("S ");
-					}
-				}
-				System.out.println();
-			}
-			
+
 		}
-		
-		System.out.println(score);
-		for (int i = 0 ; i < N; i++) {
-			for(int j = 0 ; j <M; j++) {
-				if(fall[i][j]) {
-					System.out.print("F ");
+		sb.append(score + "\n");
+		for (int i = 1; i <= N; i++) {
+			for (int j = 1; j <= M; j++) {
+				if (fall[i][j]) {
+					sb.append("F ");
 				} else {
-					System.out.print("S ");
+					sb.append("S ");
 				}
 			}
-			System.out.println();
+			sb.append("\n");
 		}
+		System.out.println(sb);
 	}
 }
