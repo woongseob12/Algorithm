@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
 bool student[5003], sleep[5003];
@@ -19,7 +18,6 @@ int main() {
 		sleep[val] = true;
 	}
 
-	// Ãâ¼®
 	for (int i = 0; i < Q; i++) {
 		int val;
 		cin >> val;
@@ -33,10 +31,6 @@ int main() {
 		attend[i] = attend[i - 1] + (!student[i]);
 	}
 
-	for (int i = 3; i <= N + 2; i++) {
-		//if (!student[i]) cout << i << " ";
-		cout << i << ": " << attend[i] << endl;
-	}
 	for (int i = 0; i < M; i++) {
 		int S, E;
 		cin >> S >> E;
