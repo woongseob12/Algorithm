@@ -42,5 +42,5 @@ int main() {
 			}
 		}
 	}
-	cout << ans1 << " " << ans2 << "\n";
+	cout << ans1 << " " << ans2;
 }
