@@ -10,14 +10,9 @@ public class BOJ10162 {
 		if(time % 10 != 0) {
 			System.out.println("-1");
 		} else {
-			int[] arr = new int[3];
 			for(int i = 0; i < microwave.length; i++) {
-				arr[i] = time / microwave[i];
+				System.out.print(time / microwave[i] + " ");
 				time %= microwave[i];
-			}
-			
-			for(int i = 0; i < microwave.length; i++) {
-				System.out.print(arr[i] + " ");
 			}
 		}
 	}
