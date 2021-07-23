@@ -1,9 +1,11 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#define ll long long
 using namespace std;
 
-int N, ans;
+int N;
+ll ans;
 vector<int> rankArr;
 void input();
 void solve();
